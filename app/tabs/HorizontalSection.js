@@ -1,15 +1,17 @@
 import { View, Text, Image, TouchableOpacity, StyleSheet, Modal, FlatList, ScrollView } from 'react-native';
 import React, {useEffect} from 'react'
 import Ionicons from '@expo/vector-icons/Ionicons';
-import { useNavigation } from 'expo-router';
-import { useRouter } from 'expo-router';
+import { useNavigation } from '@react-navigation/native';
 import { useState } from 'react';
 import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import AntDesign from '@expo/vector-icons/AntDesign';
+import Uploaddoc from '../uploadDoc';
 
 
 export default function HorizontalSection() {
+  const navigation = useNavigation();
+  
   return (
 
     //this is the add mode section.
@@ -23,50 +25,42 @@ export default function HorizontalSection() {
             }}> Add document</Text>
 
             {/* rectangle 1  */}
-          <View style={styles.container}> 
+            <View style={styles.container}> 
+        <TouchableOpacity style={styles.rectangle} onPress={() => navigation.navigate('uploadDoc')}>
+          <FontAwesome5 style={styles.icon} name="hospital-alt" size={24} color="black" />
+          <Text style={styles.text}>Health Care </Text>
+        </TouchableOpacity>
 
-            <TouchableOpacity style={styles.rectangle}>
-              <FontAwesome5 style={styles.icon} name="hospital-alt" size={24} color="black" />
-              <Text style={styles.text}>Health Care </Text>
-            </TouchableOpacity>
+        <TouchableOpacity style={styles.rectangle} onPress={() => navigation.navigate('uploadDoc')}>
+          <FontAwesome5 style={styles.icon} name="money-bill" size={24} color="black" />
+          <Text style={styles.text}>Financial</Text>
+        </TouchableOpacity>
 
-            {/* rectangle 2  */}
-            <TouchableOpacity style={styles.rectangle}>
-            <FontAwesome5 style={styles.icon} name="money-bill" size={24} color="black" />
-              <Text style={styles.text}>Financial</Text>
-            </TouchableOpacity>
+        <TouchableOpacity style={styles.rectangle} onPress={() => navigation.navigate('uploadDoc')}>
+          <Ionicons style={styles.icon} name="school" size={24} color="black" />
+          <Text style={styles.text}>Education</Text>
+        </TouchableOpacity>
 
-            {/* rectangle 3  */}
-            <TouchableOpacity style={styles.rectangle}>
-            <Ionicons style={styles.icon} name="school" size={24} color="black" />
-              <Text style={styles.text}>Education</Text>
-            </TouchableOpacity>
+        <TouchableOpacity style={styles.rectangle} onPress={() => navigation.navigate('uploadDoc')}>
+          <FontAwesome style={styles.icon} name="bank" size={24} color="black" />
+          <Text style={styles.text}>Legal</Text>
+        </TouchableOpacity>
 
-            {/* rectangle 4  */}
-            <TouchableOpacity style={styles.rectangle}>
-            <FontAwesome style={styles.icon} name="bank" size={24} color="black" />
-              <Text style={styles.text}>Legal</Text>
-            </TouchableOpacity>
+        <TouchableOpacity style={styles.rectangle} onPress={() => navigation.navigate('uploadDoc')}>
+          <AntDesign style={styles.icon} name="lock" size={24} color="black" />
+          <Text style={styles.text}>Government</Text>
+        </TouchableOpacity>
 
-            {/* rectangle 5  */}
-            <TouchableOpacity style={styles.rectangle}>
-            <AntDesign style={styles.icon} name="lock" size={24} color="black" />
-              <Text style={styles.text}>Government</Text>
-            </TouchableOpacity>
+        <TouchableOpacity style={styles.rectangle} onPress={() => navigation.navigate('uploadDoc')}>
+          <AntDesign style={styles.icon} name="printer" size={24} color="black" />
+          <Text style={styles.text}>Electronics</Text>
+        </TouchableOpacity>
 
-            {/* rectangle 6  */}
-            <TouchableOpacity style={styles.rectangle}>
-            <AntDesign style={styles.icon} name="printer" size={24} color="black" />
-              <Text style={styles.text}>Electronics</Text>
-            </TouchableOpacity>
-
-             {/* rectangle 7  */}
-            <TouchableOpacity style={styles.rectangle}>
-            <AntDesign style={styles.icon} name="tag" size={24} color="black" />
-              <Text style={styles.text}>Miscellaneous</Text>
-            </TouchableOpacity>
-
-          </View>
+        <TouchableOpacity style={styles.rectangle} onPress={() => navigation.navigate('uploadDoc')}>
+          <AntDesign style={styles.icon} name="tag" size={24} color="black" />
+          <Text style={styles.text}>Miscellaneous</Text>
+        </TouchableOpacity>
+      </View>
           
 
           <Text style={{
